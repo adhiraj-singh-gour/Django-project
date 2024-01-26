@@ -20,9 +20,10 @@
    
    <section class="flex">
 
-      <a href="home.html" class="logo">Educa.</a>
+      <a href="{% url 'home' %}" class="logo">Educa.</a>
 
       <form action="search.html" method="post" class="search-form">
+         {% csrf_token %}
          <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
          <button type="submit" class="fas fa-search"></button>
       </form>
@@ -38,10 +39,10 @@
          <img src="{% static 'images/pic-1.jpg' %}" class="image" alt="">
          <h3 class="name">shaikh anas</h3>
          <p class="role">studen</p>
-         <a href="profile.html" class="btn">view profile</a>
+         <a href="{% url 'profile' %}" class="btn">view profile</a>
          <div class="flex-btn">
-            <a href="login.html" class="option-btn">login</a>
-            <a href="register.html" class="option-btn">register</a>
+            <a href="{% url 'loginpage' %}" class="option-btn">login</a>
+            <a href="{% url 'registerpage' %}" class="option-btn">register</a>
          </div>
       </div>
 
@@ -59,15 +60,15 @@
       <img src="{% static 'images/pic-1.jpg' %}" class="image" alt="">
       <h3 class="name">shaikh anas</h3>
       <p class="role">studen</p>
-      <a href="profile.html" class="btn">view profile</a>
+      <a href="{% url 'profile' %}" class="btn">view profile</a>
    </div>
 
    <nav class="navbar">
-      <a href="{%url 'home' %}"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="{% url "about" %}"><i class="fas fa-question"></i><span>about</span></a>
-      <a href="{% url "courses" %}"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
-      <a href="{% url "teachers" %}"\><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
-      <a href="{% url "contact" %}"><i class="fas fa-headset"></i><span>contact us</span></a>
+      <a href="{% url 'home' %}"><i class="fas fa-home"></i><span>home</span></a>
+      <a href="{% url 'about' %}"><i class="fas fa-question"></i><span>about</span></a>
+      <a href="{% url 'courses' %}"><i class="fas fa-graduation-cap"></i><span>courses</span></a>
+      <a href="{% url 'teachers' %}"\><i class="fas fa-chalkboard-user"></i><span>teachers</span></a>
+      <a href="{% url 'contact' %}"><i class="fas fa-headset"></i><span>contact us</span></a>
    </nav>
 
 </div>
@@ -77,6 +78,7 @@
    <h1 class="heading">expert teachers</h1>
 
    <form action="" method="post" class="search-tutor">
+      {% csrf_token %}
       <input type="text" name="search_box" placeholder="search tutors..." required maxlength="100">
       <button type="submit" class="fas fa-search" name="search_tutor"></button>
    </form>
@@ -86,7 +88,7 @@
       <div class="box offer">
          <h3>become a tutor</h3>
          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, itaque ipsam fuga ex et aliquam.</p>
-         <a href="register.html" class="inline-btn">get started</a>
+         <a href="{% url 'registerpage' %}" class="inline-btn">get started</a>
       </div>
 
       <div class="box">
@@ -100,7 +102,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -114,7 +116,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -128,7 +130,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -142,7 +144,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -156,7 +158,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -170,7 +172,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
       <div class="box">
@@ -184,7 +186,7 @@
          <p>total playlists : <span>4</span></p>
          <p>total videos : <span>18</span></p>
          <p>total likes : <span>1208</span></p>
-         <a href="teacher_profile.html" class="inline-btn">view profile</a>
+         <a href="{% url 'teacher_profile' %}" class="inline-btn">view profile</a>
       </div>
 
    </div>
