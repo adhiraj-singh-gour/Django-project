@@ -100,8 +100,6 @@ def userLogin(request):
                     'Profile':Profile
                 }
                 return render(request,"profile.html",user)
-            # if user[0].Password == Password:
-            #     return render(request, "home.html")
             else:
                 message = "Password not match"
                 return render(request, "login.html", {"msg": message})
